@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+<h3 class="text-center">SÁCH MỚI</h3>
+<hr />
+<div class="row text-center">
+
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+        <div class="thumbnail">
+            <img src="~/Image/130318.jpg" class="img-responsive img-rounded imgbook" />
+            <div class="caption">
+                <h4>Sản phẩm</h4>
+                <p>Mô tả sản phẩm</p>
+                <a href="#" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+        <div class="thumbnail">
+            <img src="~/Image/130499.jpg" class="img-responsive img-rounded imgbook" />
+            <div class="caption">
+                <h4>Sản phẩm</h4>
+                <p>Mô tả sản phẩm</p>
+                <a href="#" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+        <div class="thumbnail">
+            <img src="~/Image/KT0001.jpg" class="img-responsive img-rounded imgbook" />
+            <div class="caption">
+                <h4>Sản phẩm</h4>
+                <p>Mô tả sản phẩm</p>
+                <a href="#" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+        <div class="thumbnail">
+            <img src="~/Image/KT0003.jpg" class="img-responsive img-rounded imgbook" />
+            <div class="caption">
+                <h4>Sản phẩm</h4>
+                <p>Mô tả sản phẩm</p>
+                <a href="#" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+        <div class="thumbnail">
+            <img src="~/Image/KT0005.jpg" class="img-responsive img-rounded imgbook" />
+            <div class="caption">
+                <h4>Sản phẩm</h4>
+                <p>Mô tả sản phẩm</p>
+                <a href="#" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+        <div class="thumbnail">
+            <img src="~/Image/KT0007.jpg" class="img-responsive img-rounded imgbook" />
+            <div class="caption">
+                <h4>Sản phẩm</h4>
+                <p>Mô tả sản phẩm</p>
+                <a href="#" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<nav class="text-center">
+    <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+</nav>
+
+@section SachBanNhieu {
+    @Html.Action("SachBanNhieuPartial", "Sachonline")
+}
