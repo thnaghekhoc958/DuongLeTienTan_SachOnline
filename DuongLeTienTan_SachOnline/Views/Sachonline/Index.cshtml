@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<DuongLeTienTan_SachOnline.Models.SACH>
+
+@{
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
@@ -7,82 +9,25 @@
 <hr />
 <div class="row text-center">
 
-    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-        <div class="thumbnail">
-            <img src="~/Image/130318.jpg" class="img-responsive img-rounded imgbook" />
-            <div class="caption">
-                <h4>Sản phẩm</h4>
-                <p>Mô tả sản phẩm</p>
-                <a href="#" class="btn btn-primary btn-sm">
-                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
-                </a>
-            </div>
-        </div>
-    </div>
+    <div class="row text-center">
+        @foreach (var sach in Model)
+        {
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+                <div class="thumbnail">
+                    <img src="~/Image/KT0005.jpg" class="imgbook" />
+                    <div class="caption">
+                        @*<h4><a href="@Url.Action("BookDetail", "SachOnline", new { id = sach.MaSach })">@sach.TenSach</a></h4>*@
+                        <h4>
+                            <a href="@Url.Action("ChiTietSach", "SachOnline", new { id = sach.MaSach })">
+                                @sach.TenSach
+                            </a>
 
-    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-        <div class="thumbnail">
-            <img src="~/Image/130499.jpg" class="img-responsive img-rounded imgbook" />
-            <div class="caption">
-                <h4>Sản phẩm</h4>
-                <p>Mô tả sản phẩm</p>
-                <a href="#" class="btn btn-primary btn-sm">
-                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
-                </a>
+                        </h4>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-        <div class="thumbnail">
-            <img src="~/Image/KT0001.jpg" class="img-responsive img-rounded imgbook" />
-            <div class="caption">
-                <h4>Sản phẩm</h4>
-                <p>Mô tả sản phẩm</p>
-                <a href="#" class="btn btn-primary btn-sm">
-                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-        <div class="thumbnail">
-            <img src="~/Image/KT0003.jpg" class="img-responsive img-rounded imgbook" />
-            <div class="caption">
-                <h4>Sản phẩm</h4>
-                <p>Mô tả sản phẩm</p>
-                <a href="#" class="btn btn-primary btn-sm">
-                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-        <div class="thumbnail">
-            <img src="~/Image/KT0005.jpg" class="img-responsive img-rounded imgbook" />
-            <div class="caption">
-                <h4>Sản phẩm</h4>
-                <p>Mô tả sản phẩm</p>
-                <a href="#" class="btn btn-primary btn-sm">
-                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-        <div class="thumbnail">
-            <img src="~/Image/KT0007.jpg" class="img-responsive img-rounded imgbook" />
-            <div class="caption">
-                <h4>Sản phẩm</h4>
-                <p>Mô tả sản phẩm</p>
-                <a href="#" class="btn btn-primary btn-sm">
-                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
-                </a>
-            </div>
-        </div>
+        }
     </div>
 
 </div>

@@ -1,17 +1,32 @@
-﻿<h3 class="text-center">SÁCH BÁN NHIỀU</h3>
-<div class="row">
-    @for (int i = 1; i <= 6; i += 2)
+﻿@model List<DuongLeTienTan_SachOnline.Models.SACH>
+
+<h4 class="text-center text-uppercase fw-bold mb-4">Sách Bán Nhiều</h4>
+<div class="row g-4">
+    @foreach (var item in Model)
     {
         <div class="col-md-6">
-            <div class="media">
-                <div class="media-left">
-                    <img src="~/Images/sale@i.jpg" class="media-object imgsachbannhieu" />
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Tên sản phẩm</h4>
-                    <p>Mô tả sản phẩm nổi bật đã bán nhiều</p>
+            <div class="card shadow-sm h-100">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <a href="@Url.Action("ChiTietSach", "SachOnline", new { id = item.MaSach })">
+                            <img src="~/Image/130499.jpg" class="img-fluid rounded-start imgsachbannhieu" alt="@item.TenSach" />
+                        </a>
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">
+                                <a href="@Url.Action("ChiTietSach", "SachOnline", new { id = item.MaSach })" class="text-decoration-none text-dark">
+                                    @item.TenSach
+                                </a>
+                            </h6>
+                            <p class="card-text mb-1 text-muted">Đã bán: <strong>@item.SoLuongBan</strong></p>
+                            <p class="card-text mb-1 text-danger fw-semibold">@item.DonGia.ToString("n0") VNĐ</p>
+                            <p class="card-text"><small class="text-muted">@item.MoTa</small></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     }
+
 </div>

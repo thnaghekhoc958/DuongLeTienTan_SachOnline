@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Đăng Ký";
+}
+<h4 style="color:red; text-align:center;">@ViewBag.ThongBao</h4>
+<h2 style="text-align:center">ĐĂNG KÝ THÀNH VIÊN</h2>
+
+@using (Html.BeginForm("DangKy", "User", FormMethod.Post))
+{
+    <table align="center">
+        <tr><td>Họ tên:</td><td>@Html.TextBox("HoTen")</td></tr>
+        <tr><td>Mật khẩu:</td><td>@Html.Password("MatKhau")</td></tr>
+        <tr><td>Email:</td><td>@Html.TextBox("Email")</td></tr>
+        <tr><td>Điện thoại:</td><td>@Html.TextBox("DienThoai")</td></tr>
+        <tr><td>Ngày sinh:</td><td><input type="date" name="NgayDangKy" /></td></tr>
+        <tr><td>Địa chỉ:</td><td><input type="text" name="DiaChi" /></td></tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <input type="submit" value="Đăng ký" /> <input type="reset" value="Xóa" />
+            </td>
+        </tr>
+    </table>
+}
+

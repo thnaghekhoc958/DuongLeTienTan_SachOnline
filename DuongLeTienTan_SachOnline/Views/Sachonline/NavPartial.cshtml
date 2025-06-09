@@ -1,16 +1,55 @@
-﻿<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">SachOnline</a>
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">SachOnline</a>
+
+        <!-- Nút toggle cho mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nội dung navbar -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sách mới</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sách theo nhà xuất bản</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="btnDangKy">Đăng ký</a>
+                </li>
+            </ul>
+
+            <!-- Form tìm kiếm -->
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Tìm</button>
+            </form>
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Trang chủ</a></li>
-            <li><a href="#">Sách mới</a></li>
-            <li><a href="#">Liên hệ</a></li>
-            <li><a href="#">Sách theo nhà xuất bản</a></li>
-        </ul>
-        <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Tìm kiếm">
-        </form>
     </div>
 </nav>
+
+<!-- Form đăng ký (ẩn/hiện khi nhấn) -->
+<div class="container mt-3" id="formDangKy" style="display: none;">
+    @Html.Action("DangKyPartial", "User")
+</div>
+
+<!-- Script: toggle form đăng ký -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("btnDangKy");
+        const form = document.getElementById("formDangKy");
+
+        btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            form.style.display = (form.style.display === "none") ? "block" : "none";
+        });
+    });
+</script>

@@ -1,0 +1,27 @@
+﻿@model DuongLeTienTan_SachOnline.Models.SACH
+@{
+    ViewBag.Title = "Chi Tiết Sách";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="~/Image/130499.jpg" class="img-fluid rounded border shadow-sm" alt="@Model.TenSach" />
+        </div>
+        <div class="col-md-8">
+            <h2 class="fw-bold">@Model.TenSach</h2>
+            <p><strong>Tác giả:</strong> @Model.TacGia</p>
+            <p><strong>Giá bán:</strong> <span class="text-danger fw-bold">@Html.FormatValue(Model.DonGia, "{0:#,##0}") VNĐ</span></p>
+            <p><strong>Ngày cập nhật:</strong> @Html.FormatValue(Model.NgayCapNhat, "{0:dd/MM/yyyy}")</p>
+            <p><strong>Nhà xuất bản:</strong> @Model.NHAXUATBAN.TenNXB</p>
+            <p><strong>Mô tả:</strong></p>
+            <div class="border p-3 rounded bg-light">
+                @Html.Raw(Model.MoTa.Replace("\n", "<br />"))
+            </div>
+            <div class="mt-4">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="javascript:history.back()" class="btn btn-secondary ms-2">Quay lại</a>
+            </div>
+        </div>
+    </div>
+</div>

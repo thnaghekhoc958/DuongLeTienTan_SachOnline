@@ -1,0 +1,21 @@
+﻿@model List<DuongLeTienTan_SachOnline.Models.SACH>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var sach in Model)
+    {
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="~/Image/130318.jpg" class="card-img-top imgbook" alt="@sach.TenSach" />
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @Html.ActionLink(sach.TenSach, "ChiTietSach", new { id = sach.MaSach }, new { @class = "text-decoration-none text-dark" })
+                    </h5>
+                    <p class="card-text text-danger fw-semibold">
+                        @sach.DonGia.ToString("N0") VNĐ
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

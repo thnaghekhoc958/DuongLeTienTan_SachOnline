@@ -1,13 +1,17 @@
-﻿<ul class="list-group">
-    <li class="list-group-item active" style="font-weight:bold; text-
-align:center">SACH THEO CHU ĐE</li>
-    <a href="#" class="list-group-item">Ngoai ngu</a>
-    <a href="#" class="list-group-item">Cong nghe thong tin</a>
-    <a href="#" class="list-group-item">Luat</a>
-    <a href="#" class="list-group-item">Van hoc</a>
-    <a href="#" class="list-group-item">Khoa hoc ky thuat</a>
-    <a href="#" class="list-group-item">Nong nghiệp</a>
-    <a href="#" class="list-group-item">Lịch sử, địa lý</a>
-    <a href="#" class="list-group-item">Kinh te</a>
-    <a href="#" class="list-group-item">Nghe thuat song</a>
-</ul>
+﻿@model List<DuongLeTienTan_SachOnline.Models.CHUDE>
+
+<div class="sidebar">
+    <ul class="list-group">
+        <li class="list-group-item active text-center fw-bold">
+            <i class="fa fa-book-open"></i> SÁCH THEO CHỦ ĐỀ
+        </li>
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item">
+                <a href="@Url.Action("SachTheoChuDe", "Sach", new { id = item.MaCD })" class="text-decoration-none text-dark d-block">
+                    <i class="fa fa-angle-right me-2"></i> @item.TenChuDe
+                </a>
+            </li>
+        }
+    </ul>
+</div>
